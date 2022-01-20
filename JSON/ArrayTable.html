@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+    <link rel="stylesheet" href="EmployeeTable.css">
+</head>
+<body>
+    
+    <div>
+        <button>Get</button>
+        <div id="table"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+
+
+  <script>
+      let btnGet = document.querySelector('button');
+      let myTable = document.querySelector('#table');
+
+
+let employees = [
+    {Id:'101', name:'Safi',salary:'20,000'},
+    {Id:'101', name:'Thousif',salary:'18,000'},
+    {Id:'101', name:'Mohamed',salary:'15,000'}
+]
+
+let headers = ['Id', 'Name', 'Salary'];
+
+btnGet.addEventListener('click', () => {
+    let table = document.createElement('table');
+    let headerRow = document.createElement('tr');
+
+    headers.forEach(headerText => {
+        let header = document.createElement('th');
+        let textNode = document.createTextNode(headerText);
+        header.appendChild(textNode);
+        headerRow.appendChild(header);
+    });
+
+    table.appendChild(headerRow);
+
+    employees.forEach(emp => {
+        let row = document.createElement('tr');
+
+        Object.values(emp).forEach(text => {
+            let cell = document.createElement('td');
+            let textNode = document.createTextNode(text);
+            cell.appendChild(textNode);
+            row.appendChild(cell);
+        })
+
+        table.appendChild(row);
+    });
+
+    myTable.appendChild(table);
+});
+  </script>
+  </html>
