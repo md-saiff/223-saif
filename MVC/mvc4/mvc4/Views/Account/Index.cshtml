@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<ul>
+    @foreach (var Act in ViewData["Accounts"] as IList<Account>)
+    {
+        <li>
+            @Act.Account_ID
+            @Act.AccountHolder_Name
+            @Act.AccountHolder_Address
+        </li>
+    }
+</ul>
