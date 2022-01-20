@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> Add Rows To HTML Table From Array </title>
+<style>
+  .clickable{
+    cursor:pointer;
+    background: darkmagenta;
+  }
+</style>
+<script src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("th").each(function(column){
+      $(this).hower(function(){
+        $(this).addClass("clickable");
+      },function(){
+        $(this).removeClass("clickable");
+    });$(this).click(function(){
+      var record =$("table").find("tbody>tr");
+      record.sort(function(a,b){
+      var value1=$(a).children("td").eq(column).text();
+      var value2=$(b).children("td").eq(column).text();
+      if(type == "num")
+      {
+        value1 *=1;
+        value2 *=1;
+      }
+      return(value<value2)? -1:(value1>value2?1:0)
+      });
+      $.each(records,function(index,row){
+        $("tbody").append(row);
+      });
+    });
+  });
+});
+</script>
+      
+    </body>
+    <table border="1">
+      <thead>
+        <tr><th>ID</th><th>NAME</th><th>AGE</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>101</td><td>Hannah</td><td>25</td></tr>
+        <tr><td>102</td><td>saif</td><td>23</td></tr>
+        <tr><td>103</td><td>thousif</td><td>28</td></tr>
+      
+      </tbody>
+    </table>
+</html>
