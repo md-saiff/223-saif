@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Grid</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/css/ui.jqgrid.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.5/jquery.jqgrid.min.js"></script>
+
+    <script>
+    $(function () {
+        "use strict";
+        $("#grid").jqGrid({
+            colModel: [
+                { name: "EmpName" },
+                { name: "Salary" },
+                { name: "Location"} 
+            ],
+            data: [
+                { id: 26, EmpName: "Ashik", Salary: "400000", Location: "Chennai" },
+                { id: 27, EmpName: "Saif", Salary: "450000", Location: "Coimbatore" },
+                { id: 28, EmpName: "Vijay", Salary: "280000", Location: "Bangalore" },
+                { id: 33, EmpName: "Thomas", Salary: "350000", Location: "Kottaiyam" },
+               
+            ]
+        });
+    });
+    </script>
+</head>
+<h1>Dynamic grid:</h1>
+<body style="background-color: crimson;">
+<table id="grid"></table>
+</body>
+</html>
